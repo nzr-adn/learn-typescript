@@ -10,5 +10,9 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3"
+  },
+  "scripts": {
+    "build": "rm -rf build/ && tsc",
+    "build:watch": "rm -rf build/ && tsc --watch"
   }
 }
