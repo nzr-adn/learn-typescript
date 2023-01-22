@@ -1,0 +1,14 @@
+{
+  "name": "learn-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "LAPTOP-GQT1FNKP\\NZR <nizar.adian.n@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
