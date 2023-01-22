@@ -6,37 +6,19 @@ import compression from "compression";
 import helmet from "helmet";
 import cors from "cors";
 
-
-class App {
-    public app: Application;
-
-
-    constructor() {
-        this.app = express();
-        this.plugins();
-        this.routes();
-    }
-
-    protected plugins():void {
-        this.app.use(bodyParser.json());
-        this.app.use(morgan("dev"));
-        this.app.use(compression());
-        this.app.use(helmet());
-        this.app.use(cors());
-    }
-
-    protected routes():void {
-        this.app.get('/', (req: Request, res: Response) => {
-            res.send("Test API Worked");
-        });
-    }
-}
-
 dotenv.config();
 const PORT = process.env.PORT || 3000;
-const app = new App().app;
+const app = express();
+
+app.use(bodyParser.json());
+app.use(morgan("dev"));
+app.use(compression());
+app.use(helmet());
+app.use(cors());
+
 app.listen(PORT,() => {
-    console.log("Run on Port " + PORT);
+    console.log("Express API RUN ON : " + PORT);
+    app.get('/', (req: Request, res: Response) => {
+        res.send("Test API Worked");
+    });
 });
-
-
